@@ -2,13 +2,13 @@
  *	@name		ExamenA2017.cpp
  *	@author		Ivan Ceballos Vega
  *	@date		30-01-2017
- *	@version	1.0
+ *	@version	1.0.1
  */
 
 
-#include <iostream>
-#include <string>
-#include <fstream>	
+#include <iostream>	// Libreria I/O.
+#include <string>	// Libreria para trabajar con cadenas de caracteres.
+#include <fstream>	// Libreria para trabajar con archivos.
 #include <cmath>	// Libreria para el uso de abs.
 #include <iomanip>	// Libreria para el uso de setw.
 
@@ -37,7 +37,7 @@ typedef tApunte tCuenta[MAX_APUNTES];
 /**
  *	Carga el documento en la fila.
  *
- *	@param	cuenta 		 	Array donde se guardan los datos.
+ *	@param	cuenta 		Array donde se guardan los datos.
  *	@param	numElementos 	Numero de elementos que contiene el array.
  *	@param	archivoElegido	Nombre del archivo donde estan almacenados los datos.
  *
@@ -47,9 +47,9 @@ void cargar(tCuenta cuenta, int& numElementos, string archivoElegido);
 /**
  *	Extrae la primera nomina.
  *
- *	@param	cuenta 		 	Array donde estan almacenados los datos.
+ *	@param	cuenta 		Array donde estan almacenados los datos.
  *	@param	numElementos	Numero de elementos que contiene el array.
- *	@return	nomina			Inreso en concepto de salarios.
+ *	@return	nomina		Inreso en concepto de salarios.
  *
  */
 float nomina(const tCuenta cuenta, int numElementos);
@@ -57,10 +57,10 @@ float nomina(const tCuenta cuenta, int numElementos);
 /**
  *	Calcula la media de gasto en concepto de luz de un anyo dado.
  *
- *	@param	cuenta 		 	Array donde se guardan los datos.
- *	@param	anyo			Anyo donde se quieren buscar los datos.
+ *	@param	cuenta 		Array donde se guardan los datos.
+ *	@param	anyo		Anyo donde se quieren buscar los datos.
  *	@param	numElementos 	Numero de elementos que contiene el array.
- *	@return	sumaLuz			Media de gasto en luz del anyo dado.
+ *	@return	sumaLuz		Media de gasto en luz del anyo dado.
  *
  */
 float gastoLuz(const tCuenta cuenta, int anyo, int numElementos);
@@ -68,7 +68,7 @@ float gastoLuz(const tCuenta cuenta, int anyo, int numElementos);
 /**
  *	Muestra la cuenta por pantalla.
  *
- *	@param	cuenta 		 	Array donde se guardan los datos.
+ *	@param	cuenta 		Array donde se guardan los datos.
  *	@param	numElementos 	Numero de elementos que contiene el array.
  *
  */
@@ -178,10 +178,10 @@ void mostrarCuenta(const tCuenta cuenta, int numElementos){
 	
 	for (int i = 0; i < numElementos; i++){
 		cout << setw(2) << 	cuenta[i].fecha.dia  << " " << 
-				setw(2) <<	cuenta[i].fecha.mes  << " " << 
-				setw(2) << 	cuenta[i].fecha.anyo << " " << 
-				setw(8) << 	cuenta[i].importe 	 << " " << 
-							cuenta[i].concepto 	 << endl;
+				setw(2) <<	cuenta[i].fecha.mes << " " << 
+				setw(4) << 	cuenta[i].fecha.anyo << " " << 
+				setw(8) << 	cuenta[i].importe << " " << 
+						cuenta[i].concepto << endl;
 	}
 }
 
